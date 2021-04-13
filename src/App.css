@@ -90,7 +90,108 @@ it means it is positioned relative to the nearest positioned ancestor (screen) *
   /* adding padding and margin to each link container, and center horizontally*/
 }
 
+/* padding to h2. to create more space */
+.link > h2{
+  padding: 0rem 2rem;
+}
+
+.pro{
+  background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+  border-radius: 2rem;
+  color: white;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+  /* if you want to be positioned relative to .pro container add to pro container position relative */
+}
+
+.pro > img{
+  /* position absolute, positioned relative to the nearest positioned ancestor.
+  if you want to be positioned relative to .pro container add to pro container position relative */
+  position: absolute;
+  top: -10%;
+  right: 10%;
+  /*top -10 from this div. 10 percent from right */
+
+}
+
+.pro > h2{
+  width: 40%;
+  color: white;
+  font-weight: 600;
+}
+
+
 /* if add flex:1 to games too it will split glass equally. if flex: 2 it will be twice as big */
 .games{
   flex: 2;
+  display: flex;
+  /* adding flex will make child elements put vertically, next to each other
+  but we dont want that so we add direction column */
+  flex-direction: column;
+  margin: 5rem;
+}
+
+/* GAMES SECTION STYLING */
+.status{
+  margin-bottom: 3rem;
+  /* adding space to bottom */
+}
+
+.status > input{
+  background: linear-gradient(to right bottom, rgba(255,255,255,0.7), rgba(255,255,255,0.3));
+  border: none;
+  /* remove border, and make input background linnear gradient */
+  width: 50%;
+  padding: 0.5rem;
+  border-radius: 2rem;
+}
+
+.card{
+  /* adding flex will make child elements put vertically, next to each other */
+  display: flex;
+  background: linear-gradient(to left top, rgba(255,255,255,0.2), rgba(255,255,255,0.9));
+  border-radius: 1rem;
+  /* margin top bottom 2rem. padding 2rem all around */
+  margin: 2rem 0rem;
+  padding: 2rem;
+  box-shadow: 6px 6px 20px rgba(122,122,122,0.212);
+  justify-content: space-between;
+  /* gives space between elements horizontally */
+
+}
+
+.progress{
+  /* add radius to progress container, width 100 % */
+  background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+  width: 100%;
+  height: 25%;
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* generate additional styling. ::after you have to add content "" always*/
+.progress::after{
+  /* we basically can generate new div */
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: rgb(236,236,236);
+  position: absolute;
+  /* position absolute will positioned relative to the nearest positioned ancestor */
+  left: 60%;
+}
+
+.card_info{
+  display: flex;
+  /* display flex will make child elements put vertically, next to each other */
+  flex-direction: column;
+  justify-content: space-between;
+  /* give bit of spacing between those */
+}
+
+.percentage{
+  font-weight: bold;
 }

@@ -44,7 +44,7 @@ function App() {
               </div>
             </div>
 
-            <div className='join_free'>
+            <div className='pro'>
               <h2>Join pro for free games.</h2>
               <img src={controller} alt='' />
             </div>
