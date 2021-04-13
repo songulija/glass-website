@@ -1,38 +1,96 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* main  which holds glass,  everyting will be 100% minimum height
+it'll take full space */
+main{
   min-height: 100vh;
+  background: linear-gradient(to right top, #65dfc9, #6cdbeb);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+/* background linear gradient from bottom left to top right */
+/* we can use display flex, and alignIhem to center vertically and justify-content to
+center horizontally*/
+
+/* glass container will take 80% of screen
+rgba allows to add opacity, background from left bottom  */
+.glass{
+  background: white;
+  min-height: 80vh;
+  width: 60%;
+  background: linear-gradient(to right bottom, rgba(255,255,255,0.7), rgba(255,255,255,0.3));
+  border-radius: 2rem;
+  z-index: 3;
+  backdrop-filter: blur(2rem);
+  /* to add blur to glass container */
+  display: flex;
+  /* we can use display flex to seperate our glass container into to sections
+ adding flex will make child elements put vertically, next to each other*/
+}
+/* background from left top to right bottom
+use z-index of 3 for glass container, and less for circle containers
+so circles will be behind, more number the more forward it will be*/
+
+
+
+/* apply for both circles this style */
+.circle1, .circle2{
+  background: linear-gradient(to right bottom, rgba(255,255,255,0.8), rgba(255,255,255,0.3));
+  height: 20rem;
+  width: 20rem;
+  position: absolute;
+  z-index: 2;
+  border-radius: 50%;
+}
+/* bacgkround from left top to right bottom
+rgba allows to add opacity, background from left bottom
+z-index of 2 for circles. glass has 3. so circles will be behind glass component 
+
+give width and height, and position absolute
+it means it is positioned relative to the nearest positioned ancestor (screen) */
+
+.circle1{
+  top: 5%;
+  right: 10%;
+}
+/* and we can then add top right px that we want to move it. move 5% percent from tom side*/
+
+.circle2{
+  bottom: 5%;
+  left: 10%;
+}
+/* and we can then add bottom left px that we want to move it. move 5% percent from tom side*/
+
+
+/* we can use display flex to seperate our glass container into to sections
+ adding flex will make child elements put vertically, next to each other*/
+
+/* flex 1 means it'll take all available space */
+.dashboard{
+  flex: 1;
+  display:flex;
+  /*adding flex will make child elements put vertically but we dont want that
+  so we can change flex direction to column, and after we add display flex we
+  can then use alignItems (horizontally) and justify-content to center or ..*/
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+  /* align text, add linear gradient to background, from left top to right bottom */
+  background: linear-gradient(to right bottom, rgba(255,255,255,0.7), rgba(255,255,255,0.3));
+  border-radius: 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+.link{
+  display: flex;
+  /*adding flex will make child elements put vertically, so img will be next to h2*/
+  margin: 2rem 0rem;
+  padding: 1rem 5rem;
+  align-items: center;
+  /* adding padding and margin to each link container, and center horizontally*/
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* if add flex:1 to games too it will split glass equally. if flex: 2 it will be twice as big */
+.games{
+  flex: 2;
 }
